@@ -13,8 +13,12 @@
             //Do itteration for all document in a collection
             foreach ($cursor as $doc) {
                 $tmp = array();
+                $tmp["license"] = $doc["license"];
                 $tmp["name"] = $doc["name"];
+                $tmp["surname"] = $doc["surname"];
                 $tmp["position"] = $doc["position"];
+                $tmp["section"] = $doc["section"];
+                $tmp["round"] = $doc["round"];
                 array_push($result,$tmp);
             }
             response(200, $result);
