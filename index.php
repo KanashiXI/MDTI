@@ -12,7 +12,8 @@ require_once '/controllers/EmployeeController.php';
     echo json_encode($response, JSON_PRETTY_PRINT);
   }
 
-  $app->get('/', ['EmployeeController', 'index']);
+  $app->get('/',['EmployeeController','index']);
+  // $app->get('/hello',['EmployeeController','index']);
   // $app->post('/insert', function() use($app){
   //   TestController::insert($app->request());
   // });

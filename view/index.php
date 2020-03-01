@@ -107,16 +107,6 @@
     }
   </style>
 </head>
-<!-- $(#searctID).hide(); -->
-<script>
-  // $(document).ready(function(){
-  //   $("#searctID").hide();
-  //   $("#btnserch2").click(function(){
-  //     $("#searctID").show();
-  //   });
-  // });
-</script>
-
 
 <body>
   <!-- nav bar -->
@@ -234,6 +224,19 @@
             </div>
           </div>
         </div>
+
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th align="center">License</th>
+                <th align="center">Name</th>
+                <th align="center">Position</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="rdall">
+            </tbody>
+          </table>
       </div>
       <!-- ///////////////////////////////////////////// -->
     </div>
@@ -250,9 +253,43 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
-    <script>
 
+    <script>
+      function renderTable(data) {
+      var rdall = $("#rdall");
+      rdall.empty();
+
+      $.each(data, function(index, value) {
+        rdall.append('<tr>' +
+          '<th><img src="' + value.license + '" width="200"></th>' +
+          '<td>' + value.name + '</td>' +
+          '<td>' + value.position + '</td>' +
+          '</tr>')
+      });
+    }
+      function loadData() {
+        var url = "http://localhost/MDTI/index.php/";
+        $.getJSON(url).done(function (data) {
+          console.log(JSON.stringify(data));
+          var line = "";
+          $.each(data, function (k, item) {
+            console.log(item);
+            line += "<tr><td align='center'><img src='" + item.license + "' width='200'></td>";
+            line += "<td align='center'>" + item.name + "</td>";
+            line += "<td align='center'>" + item.position + "</td>";
+            line += "</tr>";
+          });
+          $("#rdall").empty();
+          $("#rdall").append(line);
+        });
+      }
+
+      $(function () {
+        loadData();
+      });
     </script>
+
+
   </body>
 
 </html>
