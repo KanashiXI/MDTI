@@ -93,6 +93,11 @@
       box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     }
 
+    .card-horizontal {
+      display: flex;
+      flex: 1 1 auto;
+    }
+
     /* .container {
       padding: 2px 16px;
     } */
@@ -171,72 +176,69 @@
   </div> -->
 
     <div class="container-fluid" id="con-card">
-      <div class="row">
-        <div class="col-sm-3">
-          <div class="card" style="width:auto;">
-            <img class="card-img-top"
-              src="https://cdn5.vectorstock.com/i/1000x1000/23/49/new-man-avatar-icon-flat-vector-19152349.jpg"
-              alt="Avatar" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Pongsathon Rakthong</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-              <a href="calendar.html" class="btn btn-warning" id="btnserch">information</a>
-            </div>
+      <table class="table table-striped">
+          <thead>
+            <tr>
+              <th align="center">License</th>
+              <th align="center">Name</th>
+              <th align="center">Position</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="rdall">
+          </tbody>
+        </table>
+        <div class="row">
+          <div class="col-md-3">
+              <div class="card">
+                  <div class="card-horizontal">
+                      <div class="card-body">
+                          <h4 class="card-title">Card title</h4>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-3">
+              <div class="card">
+                  <div class="card-horizontal">
+                      <div class="card-body">
+                          <h4 class="card-title">Card title</h4>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-3">
+              <div class="card">
+                  <div class="card-horizontal">
+                      <div class="card-body">
+                          <h4 class="card-title">Card title</h4>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-3">
+              <div class="card">
+                  <div class="card-horizontal">
+                      <div class="card-body">
+                          <h4 class="card-title">Card title</h4>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      </div>
+                  </div>
+              </div>
           </div>
         </div>
-        <div class="col-sm-3">
-          <div class="card" style="width:auto;">
-            <img class="card-img-top"
-              src="https://cdn5.vectorstock.com/i/1000x1000/23/49/new-man-avatar-icon-flat-vector-19152349.jpg"
-              alt="Avatar" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Panyapat ueaboon</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-              <a href="#" class="btn btn-warning">Go somewhere</a>
-            </div>
+        
+        
+        <!-- <div class="row">
+          <div id="emp-card">
           </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="card" style="width:auto;">
-            <img class="card-img-top"
-              src="https://cdn5.vectorstock.com/i/1000x1000/23/49/new-man-avatar-icon-flat-vector-19152349.jpg"
-              alt="Avatar" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Jatuporn Phummanee</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-              <a href="#" class="btn btn-warning">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="card" style="width:auto;">
-            <img class="card-img-top"
-              src="https://cdn5.vectorstock.com/i/1000x1000/23/49/new-man-avatar-icon-flat-vector-19152349.jpg"
-              alt="Avatar" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-              <a href="#" class="btn btn-warning">Go somewhere</a>
-            </div>
-          </div>
-        </div>
+        </div> -->
 
-        <table class="table table-striped">
-            <thead>
-              <tr>
-                <th align="center">License</th>
-                <th align="center">Name</th>
-                <th align="center">Position</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody id="rdall">
-            </tbody>
-          </table>
+
+
       </div>
       <!-- ///////////////////////////////////////////// -->
     </div>
@@ -245,8 +247,8 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
       integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
@@ -256,24 +258,25 @@
 
     <script>
       function renderTable(data) {
-      var rdall = $("#rdall");
-      rdall.empty();
+        var rdall = $("#rdall");
+        rdall.empty();
 
-      $.each(data, function(index, value) {
-        rdall.append('<tr>' +
-          '<th><img src="' + value.license + '" width="200"></th>' +
-          '<td>' + value.name + '</td>' +
-          '<td>' + value.position + '</td>' +
-          '</tr>')
-      });
-    }
+        $.each(data, function(index, value) {
+          rdall.append(
+            '<tr>' +
+            '<th><img src="' + value.license + '" width="200"></th>' +
+            '<td>' + value.name + '</td>' +
+            '<td>' + value.position + '</td>' +
+            '</tr>')
+        });
+      }
       function loadData() {
-        var url = "http://localhost/MDTI-master/index.php/jsonemp";
+        var url = "http://localhost/MDTI/index.php/jsonemp";
         $.getJSON(url).done(function (data) {
           console.log(JSON.stringify(data));
           var line = "";
           $.each(data, function (k, item) {
-            console.log(item);
+            // console.log(item);
             line += "<tr><td align='center'>" + item.license + "</td>";
             line += "<td align='center'>" + item.name + "</td>";
             line += "<td align='center'>" + item.position + "</td>";
@@ -284,6 +287,55 @@
         });
       }
 
+      // function renderTable(data) {
+      //   var empcard = $("#emp-card");
+      //   empcard.empty();
+
+      //   $.each(data, function(index, value) {
+      //     empcard.append(
+      //       '<tr>' +
+      //       '<th>' + value.license + '</th>' +
+      //       '<td>' + value.name + '</td>' +
+      //       '<td>' + value.position + '</td>' +
+      //       '</tr>')
+
+      //       // '<div class="col-md-6">' +
+      //       // '<div class="card">' +
+      //       // '<div class="card-horizontal">' + 
+      //       // '<div class="card-body">' +
+      //       // '<h5 class="card-title">'+ value.name +'</h5>' +
+      //       // '<p class="card-text">' + value.position +
+      //       // + '</div>'
+      //       // + '</div>'
+      //       // + '</div>'
+      //       // + '</div>')
+      //   });
+      // }
+      // function loadData() {
+      //   var url = "http://localhost/MDTI/index.php/jsonemp";
+      //   $.getJSON(url).done(function (data) {
+      //     console.log(JSON.stringify(data));
+      //     var line = "";
+      //     $.each(data, function (k, item) {
+      //       // console.log(item);
+
+      //       line += "<tr><td align='center'>" + item.license + "</td>";
+      //       line += "<td align='center'>" + item.name + "</td>";
+      //       line += "<td align='center'>" + item.position + "</td>";
+      //       line += "</tr>";
+
+      //       // line += "<div class='col-md-6'>"
+      //       // line += "<div class='card'>"
+      //       // line += "<div class='card-horizontal'>"
+      //       // line += "<h5 class='card-title'>" + item.name + "</h5>"
+      //       // line += "<p class='card-text'>" + item.position + "</p>"
+      //       // line += "</div></div></div></div>";
+      //     });
+      //     $("#emp-card").empty();
+      //     $("#emp-card").append(line);
+      //   });
+      // }
+
       $(function () {
         loadData();
       });
@@ -293,3 +345,6 @@
   </body>
 
 </html>
+
+
+
