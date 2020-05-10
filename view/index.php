@@ -45,29 +45,38 @@
   </nav>
   <!-- end nav bar -->
 
-  <!-- search bar -->
+  
 
   <body>
     <div class="container">
+    <br>
+    <div class="row">
+      <button type="button" class="btn btn-dark m-3">Medicine</button>
+      <button type="button" class="btn btn-dark m-3">Surgical</button>
+      <button type="button" class="btn btn-dark m-3">Emergency Room</button>
+      <button type="button" class="btn btn-dark m-3">Operating Room</button>
+      <button type="button" class="btn btn-dark m-3">Intensitive Care Unit</button>
+      <button type="button" class="btn btn-dark m-3">Obstretic Gynecology</button>
+      <button type="button" class="btn btn-dark m-3">Pediatric</button>
+    </div>
+
+    <!-- search bar -->
       <div class="d-flex justify-content-center">
         <div class="searchbar" id="searctID">
           <input class="search_input" type="text" name="" placeholder="Search...">
           <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
         </div>
       </div>
-    
-
-
     <!-- end search -->
 
     <div class="container-fluid" id="con-card">
       <table class="table table-striped">
-          <thead>
+          <thead class="thead-dark">
             <tr>
-              <th align="center">License</th>
-              <th align="center">Name</th>
-              <th align="center">surnameName</th>
-              <th align="center">Position</th>
+              <th>License</th>
+              <th>Name</th>
+              <th>surnameName</th>
+              <th>Position</th>
               <th></th>
             </tr>
           </thead>
@@ -96,7 +105,7 @@
         $.each(data, function(index, value) {
           rdall.append(
             '<tr>' +
-            '<th><img src="' + value.license + '" width="200"></th>' +
+            '<td>' + value.license + '</td>' +
             '<td>' + value.name + '</td>' +
             '<td>' + value.surname + '</td>' +
             '<td>' + value.position + '</td>' +
@@ -113,6 +122,9 @@
           var line = "";
           $.each(data, function (k, item) {
             // console.log(item);
+            for (var i in item.condition){
+              line += "<tr><>"
+            }
             line += "<tr><td align='center'>" + item.license + "</td>";
             line += "<td align='center'>" + item.name + "</td>";
             line += "<td align='center'>" + item.surname + "</td>";
