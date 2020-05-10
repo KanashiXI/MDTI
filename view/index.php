@@ -127,24 +127,7 @@
         <li class="nav-item active">
           <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li> -->
-        <!-- <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">พี่โต</a>
-            <a class="dropdown-item" href="#">พี่โตถูกใจสิ่งนี้</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li> -->
-        <!-- <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li> -->
+        
       </ul>
     </div>
   </nav>
@@ -165,22 +148,13 @@
 
     <!-- end search -->
 
-
-    <!-- <div class="card">
-    <img src="https://cdn5.vectorstock.com/i/1000x1000/23/49/new-man-avatar-icon-flat-vector-19152349.jpg" alt="Avatar"
-      style="width:100%">
-    <div class="container">
-      <h4><b>John Doe</b></h4>
-      <p>Architect & Engineer</p>
-    </div>
-  </div> -->
-
     <div class="container-fluid" id="con-card">
       <table class="table table-striped">
           <thead>
             <tr>
               <th align="center">License</th>
               <th align="center">Name</th>
+              <th align="center">surnameName</th>
               <th align="center">Position</th>
               <th></th>
             </tr>
@@ -230,15 +204,6 @@
               </div>
           </div>
         </div>
-        
-        
-        <!-- <div class="row">
-          <div id="emp-card">
-          </div>
-        </div> -->
-
-
-
       </div>
       <!-- ///////////////////////////////////////////// -->
     </div>
@@ -266,7 +231,11 @@
             '<tr>' +
             '<th><img src="' + value.license + '" width="200"></th>' +
             '<td>' + value.name + '</td>' +
+            '<td>' + value.surname + '</td>' +
             '<td>' + value.position + '</td>' +
+            '<td>' + value.section + '</td>' +
+            '<td>' + value.round + '</td>' +
+            '<td>' + value.condition + '</td>' +
             '</tr>')
         });
       }
@@ -279,7 +248,11 @@
             // console.log(item);
             line += "<tr><td align='center'>" + item.license + "</td>";
             line += "<td align='center'>" + item.name + "</td>";
+            line += "<td align='center'>" + item.surname + "</td>";
             line += "<td align='center'>" + item.position + "</td>";
+            line += "<td align='center'>" + item.section + "</td>";
+            line += "<td align='center'>" + item.round + "</td>";
+            // line += "<td align='center'>" + item.condition[0] + "</td>";
             line += "</tr>";
           });
           $("#rdall").empty();
