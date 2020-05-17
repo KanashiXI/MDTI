@@ -5,7 +5,7 @@ html {
     width: 100%;
     margin: 0;
     padding: 0;
-    background: #94b0df !important;
+    background: #9bbef3 !important;
 }
 
 .searchbar {
@@ -52,3 +52,7 @@ html {
 }
 
 /* end search bar */
+
+th {
+    text-align: center;
+}

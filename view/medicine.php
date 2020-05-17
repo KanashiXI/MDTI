@@ -51,7 +51,7 @@
     <div class="container">
     <br>
     <div class="row">
-      <a href="medicine.php" type="button" class="btn btn-dark m-3">Medicine</a>
+      <button type="button" class="btn btn-dark m-3">Home</button>
       <button type="button" class="btn btn-dark m-3">Surgical</button>
       <button type="button" class="btn btn-dark m-3">Emergency Room</button>
       <button type="button" class="btn btn-dark m-3">Operating Room</button>
@@ -69,25 +69,23 @@
       </div>
     <!-- end search -->
 
-    <div class="row justify-content-center" id="con-card">
-      <div class="col-auto table-responsive">
-        <table class="table table-striped">
+    <div class="container-fluid" id="con-card">
+      <table class="table table-striped">
           <thead class="thead-dark">
             <tr>
               <th>License</th>
-              <th>Name</th>
-              <th>surnameName</th>
-              <th>Position</th>
+              <th style="text-align:center">Name</th>
+              <th style="text-align:center">surnameName</th>
+              <th style="text-align:center">Position</th>
               <th></th>
             </tr>
           </thead>
           <tbody id="rdall">
           </tbody>
         </table>
-      </div>
+      <!-- ///////////////////////////////////////////// -->
     </div>
   </div>
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -121,7 +119,6 @@
         var url = "http://localhost/MDTI/index.php/jsonemp";
         $.getJSON(url).done(function (data) {
           console.log(JSON.stringify(data));
-          var day;
           var line = "";
           $.each(data, function (k, item) {
             // console.log(item);
@@ -132,27 +129,7 @@
             line += "<td align='center'>" + item.section + "</td>";
             line += "<td align='center'>" + item.round + "</td>";
             for (var i in item.condition){
-              switch(item.condition[i]) {
-                case 1 :
-                  line += "<td align='center'>วันจันทร์</td>";
-                  break;
-
-                // case 2 :
-                //   day = "วันอังคาร";
-                //   break;
-                
-                // case 3 :
-                //   day = "วันพุธ";
-                //   break;
-
-                case "D04" :
-                  day = "วันพุธ";
-                  break;
-                
-                  default:
-                  line += "<td align='center'>xxxxx</td>";
-              }
-              line += "<td align='center'>" + item.condition[i] + "</td>";
+              line += "<td align='center' type='hidden'>" + item.condition[i] + "</td>";
             }
             line += "</tr>";
           });
