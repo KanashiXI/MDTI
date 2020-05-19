@@ -52,7 +52,7 @@
     <br>
     <div class="row">
       <a href="medicine.php" type="button" class="btn btn-dark m-3">Medicine</a>
-      <button type="button" class="btn btn-dark m-3">Surgical</button>
+      <a href="surgical.php" type="button" class="btn btn-dark m-3">Surgical</a>
       <button type="button" class="btn btn-dark m-3">Emergency Room</button>
       <button type="button" class="btn btn-dark m-3">Operating Room</button>
       <button type="button" class="btn btn-dark m-3">Intensitive Care Unit</button>
@@ -118,7 +118,7 @@
         });
       }
       function loadData() {
-        var url = "http://localhost/MDTI/index.php/jsonemp";
+        var url = "http://localhost/MDTI-Atest/employeeIndex.php/jsonemp";
         $.getJSON(url).done(function (data) {
           console.log(JSON.stringify(data));
           var day;

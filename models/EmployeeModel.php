@@ -12,6 +12,10 @@ class EmployeeModel {
     }
 
     public function getAllEmployee() {
+        // $cursor = $this->col->find(array('$or'=>array(
+        //     array("position"=>"P01"),
+        //     array("position"=>"P02")    
+        //     )));
         $cursor = $this->col->find();
         return $cursor;
     }

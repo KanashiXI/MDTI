@@ -1,6 +1,7 @@
 <?php
 require_once '/lib/Slim/Slim/Slim.php';
 require_once '/controllers/EmployeeController.php';
+//require_once '/controllers/MedicineController.php';
 
   Slim\Slim::registerAutoloader();
   $app = new Slim\Slim();
@@ -13,6 +14,8 @@ require_once '/controllers/EmployeeController.php';
   }
 
   $app->get('/jsonemp',['EmployeeController','index']);
+  //$app->get('/jsonemp',['MedicineController','medicine']);
+  
   // $app->get('/hello',['EmployeeController','index']);
   // $app->post('/insert', function() use($app){
   //   TestController::insert($app->request());

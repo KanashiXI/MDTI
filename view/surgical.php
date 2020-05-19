@@ -29,7 +29,7 @@
 
   <!-- nav bar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">TIme table</a>
+    <a class="navbar-brand" href="#">Time table</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -75,8 +75,12 @@
             <tr>
               <th>License</th>
               <th style="text-align:center">Name</th>
-              <th style="text-align:center">surnameName</th>
-              <th style="text-align:center">Position</th>
+              <th style="text-align:center">Chan</th>
+              <th style="text-align:center">Angkarn</th>
+              <th style="text-align:center">Phut</th>
+              <th style="text-align:center">Phareehat</th>
+              <th style="text-align:center">Saow</th>
+              <th style="text-align:center">Arthit</th>
               <th></th>
             </tr>
           </thead>
@@ -110,24 +114,24 @@
             '<td>' + value.surname + '</td>' +
             '<td>' + value.position + '</td>' +
             '<td>' + value.section + '</td>' +
-            '<td>' + value.round + '</td>' +
-            '<td>' + value.condition + '</td>' +
+//            '<td>' + value.round + '</td>' +
+//            '<td>' + value.condition + '</td>' +
             '</tr>')
         });
       }
       function loadData() {
-        var url = "http://localhost/MDTI-Atest/medicineIndex.php/jsonemp";
+        var url = "http://localhost/MDTI-Atest/surgicalIndex.php/jsonemp";
         $.getJSON(url).done(function (data) {
           console.log(JSON.stringify(data));
           var line = "";
           $.each(data, function (k, item) {
             // console.log(item);
             line += "<tr><td align='center'>" + item.license + "</td>";
-            line += "<td align='center'>" + item.name + "</td>";
-            line += "<td align='center'>" + item.surname + "</td>";
+            line += "<td align='center'>" + item.name + " " +item.surname + "</td>";
+            //line += "<td align='center'>" + item.surname + "</td>";
             line += "<td align='center'>" + item.position + "</td>";
             line += "<td align='center'>" + item.section + "</td>";
-            line += "<td align='center'>" + item.round + "</td>";
+            //line += "<td align='center'>" + item.round + "</td>";
             for (var i in item.condition){
               line += "<td align='center' type='hidden'>" + item.condition[i] + "</td>";
             }
@@ -142,8 +146,6 @@
         loadData();
       });
     </script>
-
-
   </body>
 
 </html>

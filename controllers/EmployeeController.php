@@ -19,7 +19,7 @@
                 $tmp["position"] = $doc["position"];
                 $tmp["section"] = $doc["section"];
                 $tmp["round"] = $doc["round"];
-                $tmp["condition"] = $doc["condition"];
+            //    $tmp["condition"] = $doc["condition"];
                 array_push($result,$tmp);
             }
             response(200, $result);
