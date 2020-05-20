@@ -59,12 +59,12 @@
     </div>
 
     <!-- search bar -->
-      <div class="d-flex justify-content-center">
+      <!-- <div class="d-flex justify-content-center">
         <div class="searchbar" id="searctID">
           <input class="search_input" type="text" name="" placeholder="Search...">
           <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
         </div>
-      </div>
+      </div> -->
     <!-- end search -->
 
     <div class="row justify-content-center" id="con-card">
@@ -123,7 +123,7 @@
         });
       }
       function loadData() {
-        var url = "http://localhost/MDTI/employeeIndex.php/jsonemp";
+        var url = "http://localhost/MDTI-Atest/employeeIndex.php/jsonemp";
         $.getJSON(url).done(function (data) {
           console.log(JSON.stringify(data));
           var day;

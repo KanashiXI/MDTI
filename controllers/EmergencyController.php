@@ -1,12 +1,12 @@
 <?php
-    require_once '/../models/SurgicalModel.php';
+    require_once '/../models/EmergencyModel.php';
 
-    class SurgicalController
+    class EmergencyController
     {
         public function index()
         {
-            $db = new SurgicalModel();
-            $cursor = $db->getAllStwo();
+            $db = new EmergencyModel();
+            $cursor = $db->getAllStree();
             //Variable to store result
             $result = array();
 
@@ -27,7 +27,7 @@
 
 
         public function getdata($position){
-            $db = new SurgicalModel();
+            $db = new EmergencyModel();
             $cursor = $db->getdata($position);
             response(200, $cursor);
         }

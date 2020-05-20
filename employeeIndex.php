@@ -14,6 +14,7 @@ require_once '/controllers/EmployeeController.php';
   }
 
   $app->get('/jsonemp',['EmployeeController','index']);
+  
   //$app->get('/jsonemp',['MedicineController','medicine']);
   
   // $app->get('/hello',['EmployeeController','index']);
