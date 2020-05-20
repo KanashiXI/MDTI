@@ -52,12 +52,13 @@
       
       <a href="employee.php" type="button" class="btn btn-dark m-3">Employee</a>
       <a href="medicine.php" type="button" class="btn btn-dark m-3">Medicine</a>
+      <a href="surgical.php" type="button" class="btn btn-dark m-3">Surgical</a>
       <a href="emergency.php" type="button" class="btn btn-info m-3">Emergency Room</a>
       <a href="operatine.php" type="button" class="btn btn-dark m-3">Operating Room</a>
       <a href="Intensitive.php" type="button" class="btn btn-dark m-3">Intensitive Care Unit</a>
       <a href="obstretic.php" type="button" class="btn btn-dark m-3">Obstretic Gynecology</a>
       <a href="pediatric.php" type="button" class="btn btn-dark m-3">Pediatric</a>
-      <a href="surgical.php" type="button" class="btn btn-dark m-3">Surgical</a>
+
       
     </div>
 
