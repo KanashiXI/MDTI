@@ -1,6 +1,6 @@
 <?php
 require_once '/lib/Slim/Slim/Slim.php';
-require_once '/controllers/SurgicalController.php';
+require_once '/controllers/PediatricController.php';
 
   Slim\Slim::registerAutoloader();
   $app = new Slim\Slim();
@@ -12,7 +12,7 @@ require_once '/controllers/SurgicalController.php';
     echo json_encode($response, JSON_PRETTY_PRINT);
   }
 
-  $app->get('/jsonemp',['SurgicalController','index']);
+  $app->get('/jsonemp',['PediatricController','index']);
 
   $app->run();
 ?>
