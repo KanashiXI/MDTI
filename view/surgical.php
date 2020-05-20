@@ -120,7 +120,7 @@
         });
       }
       function loadData() {
-        var url = "http://localhost/MDTI-Atest/surgicalIndex.php/jsonemp";
+        var url = "http://localhost/MDTI/surgicalIndex.php/jsonemp";
         $.getJSON(url).done(function (data) {
           console.log(JSON.stringify(data));
           var line = "";

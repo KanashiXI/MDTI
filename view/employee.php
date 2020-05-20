@@ -19,7 +19,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <!-- custom css -->
   <link rel="stylesheet" type="text/css" href="../custom.css">
-  <title>index!</title>
+  <title>Home MDTI Time table</title>
 
   
 </head>
@@ -29,7 +29,7 @@
 
   <!-- nav bar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">TIme table</a>
+    <a class="navbar-brand" href="employee.php">MDTI Time table</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -37,15 +37,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="http://localhost/MDTI/view/index.php">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="http://localhost/MDTI/view/employee.php">Home <span class="sr-only">(current)</span></a>
         </li>
         
       </ul>
     </div>
   </nav>
   <!-- end nav bar -->
-
-  
 
   <body>
     <div class="container">
@@ -74,11 +72,18 @@
         <table class="table table-striped">
           <thead class="thead-dark">
             <tr>
-              <th>License</th>
-              <th>Name</th>
-              <th>surnameName</th>
-              <th>Position</th>
-              <th></th>
+              <th>#</th>
+              <th>ชื่อ - นามสกุล</th>
+              <!-- <th>surnameName</th> -->
+              <th>หน้าที่</th>
+              <th>แผนก</th>
+              <th>จันทร์</th>
+              <th>อังคาร</th>
+              <th>พุธ</th>
+              <th>พฤหัสบดี</th>
+              <th>ศุกร์</th>
+              <th>เสาร์</th>
+              <th>อาทิตย์</th>
             </tr>
           </thead>
           <tbody id="rdall">
@@ -113,47 +118,162 @@
             '<td>' + value.position + '</td>' +
             '<td>' + value.section + '</td>' +
             '<td>' + value.round + '</td>' +
-            '<td>' + value.condition + '</td>' +
+            // '<td>' + value.condition + '</td>' +
             '</tr>')
         });
       }
       function loadData() {
-        var url = "http://localhost/MDTI-Atest/employeeIndex.php/jsonemp";
+        var url = "http://localhost/MDTI/employeeIndex.php/jsonemp";
         $.getJSON(url).done(function (data) {
           console.log(JSON.stringify(data));
           var day;
           var line = "";
+          var addSerialNumber = function () {
+              var i = 1
+              $('table tr').each(function(index) {
+              $(this).find('td:nth-child(1)').html(index+1);
+            });
+          };
           $.each(data, function (k, item) {
             // console.log(item);
-            line += "<tr><td align='center'>" + item.license + "</td>";
-            line += "<td align='center'>" + item.name + "</td>";
-            line += "<td align='center'>" + item.surname + "</td>";
-            line += "<td align='center'>" + item.position + "</td>";
-            line += "<td align='center'>" + item.section + "</td>";
-            line += "<td align='center'>" + item.round + "</td>";
-            for (var i in item.condition){
-              switch(item.condition[i]) {
-                case 1 :
-                  line += "<td align='center'>วันจันทร์</td>";
-                  break;
+            line += "<tr>";
+            line += "<td>#</td>";
+            // line += "<td align='center'>" + item.license + "</td>";
+            line += "<td>" + item.name + " " + item.surname + "</td>";
+            // line += "<td align='center'>" + item.surname + "</td>";
+            // line += "<td align='center'>" + item.position + "</td>";
+            switch(item.position){
+              case "P01" :
+                line += "<td align='center'>แพทย์</td>";
+                break;
 
-                // case 2 :
-                //   day = "วันอังคาร";
-                //   break;
-                
-                // case 3 :
-                //   day = "วันพุธ";
-                //   break;
+              case "P02" :
+                line += "<td align='center'>แพทย์เฉพาะทาง</td>";
+                break;
 
-                case "D04" :
-                  day = "วันพุธ";
-                  break;
-                
-                  default:
-                  line += "<td align='center'>xxxxx</td>";
-              }
-              line += "<td align='center'>" + item.condition[i] + "</td>";
+              case "P03" :
+                line += "<td align='center'>พยาบาล</td>";
+                break;
+
+              case "P04" :
+                line += "<td align='center'>พยาบาลเชี่ยวชาญพิเศษ</td>";
+                break;
+
+              case "P05" :
+                line += "<td align='center'>ผู้ดูแล</td>";
+                break;
+
+              case "P06" :
+                line += "<td align='center'>รักษาความปลอดภัย</td>";
+                break;
+
+              default:
+                line += "<td align='center'> - </td>";
+              
             }
+
+            // line += "<td align='center'>" + item.section + "</td>";
+            switch(item.section){
+              case "S01" :
+                line += "<td align='center'>อายุรกรรม</td>";
+                break;
+
+              case "S02" :
+                line += "<td align='center'>ศัลยกรรม</td>";
+                break;
+
+              case "S03" :
+                line += "<td align='center'>อุบัติเหตุ</td>";
+                break;
+
+              case "S04" :
+                line += "<td align='center'>ผ่าตัด</td>";
+                break;
+
+              case "S05" :
+                line += "<td align='center'>ICU</td>";
+                break;
+
+              case "S06" :
+                line += "<td align='center'>สูตินรีเวช</td>";
+                break;
+              
+              case "S07" :
+                line += "<td align='center'>กุมารเวช</td>";
+                break;
+              
+              default:
+                line += "<td align='center'> - </td>";
+              
+            }
+
+            // line += "<td align='center'>" + item.round + "</td>";
+            switch(item.round){
+              case "R01" :
+                line += "<td align='center'>08:00 - 16:00 <br> 16:00 - 00:00</td>"; //01-02
+                line += "<td align='center'></td>";
+                line += "<td align='center'>08:00 - 16:00 <br>00:00 - 08:00</td>"; //01-03
+                line += "<td align='center'></td>"
+                line += "<td align='center'>16:00 - 00:00 <br>00:00 - 08:00</td>"; //02-03
+                line += "<td align='center'></td>"
+                line += "<td align='center'>16:00 - 00:00 <br>00:00 - 08:00</td>";
+                break;
+
+              case "R02" :
+                line += "<td align='center'></td>";
+                line += "<td align='center'>16:00 - 00:00 <br>00:00 - 08:00</td>"; //02-03
+                line += "<td align='center'></td>"
+                line += "<td align='center'>08:00 - 16:00 <br> 16:00 - 00:00</td>"; //01-02
+                line += "<td align='center'></td>"
+                line += "<td align='center'>08:00 - 16:00 <br>00:00 - 08:00</td>"; //01-03
+                line += "<td align='center'></td>"
+                break;
+
+              case "R03" :
+                line += "<td align='center'>16:00 - 00:00 <br>00:00 - 08:00</td>"; //02-03
+                line += "<td align='center'></td>"
+                line += "<td align='center'>08:00 - 16:00 <br> 16:00 - 00:00</td>"; //01-02
+                line += "<td align='center'></td>"
+                line += "<td align='center'>08:00 - 16:00 <br>00:00 - 08:00</td>"; //01-03
+                line += "<td align='center'></td>"
+                line += "<td align='center'>08:00 - 16:00 <br>00:00 - 08:00</td>";
+                break;
+
+              case "R04" :
+                line += "<td align='center'></td>"
+                line += "<td align='center'>08:00 - 16:00 <br>00:00 - 08:00</td>";
+                line += "<td align='center'></td>";
+                line += "<td align='center'>16:00 - 00:00 <br>00:00 - 08:00</td>";
+                line += "<td align='center'></td>"
+                line += "<td align='center'>08:00 - 16:00 <br> 16:00 - 00:00</td>";
+                line += "<td align='center'></td>"
+                break;
+
+              case "R05" :
+                line += "<td align='center'>16:00 - 00:00 <br>00:00 - 08:00</td>"; //02-03
+                line += "<td align='center'></td>"
+                line += "<td align='center'>08:00 - 16:00 <br> 16:00 - 00:00</td>"; //01-02
+                line += "<td align='center'></td>"
+                line += "<td align='center'>08:00 - 16:00 <br>00:00 - 08:00</td>"; //01-03
+                line += "<td align='center'></td>"
+                line += "<td align='center'>08:00 - 16:00 <br>00:00 - 08:00</td>";
+                break;
+
+              case "R06" :
+                line += "<td align='center'></td>"
+                line += "<td align='center'>08:00 - 16:00 <br>00:00 - 08:00</td>"
+                line += "<td align='center'></td>"
+                line += "<td align='center'>16:00 - 00:00 <br>00:00 - 08:00</td>";
+                line += "<td align='center'></td>"
+                line += "<td align='center'>08:00 - 16:00 <br> 16:00 - 00:00</td>"; //01-02
+                line += "<td align='center'></td>"
+                break;
+              
+              default:
+                line += "<td align='center'> - </td>";
+              
+            }
+
             line += "</tr>";
           });
           $("#rdall").empty();
