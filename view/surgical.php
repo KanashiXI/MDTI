@@ -49,13 +49,17 @@
     <div class="container">
     <br>
     <div class="row">
+      
+      <a href="employee.php" type="button" class="btn btn-dark m-3">Employee</a>
       <a href="medicine.php" type="button" class="btn btn-dark m-3">Medicine</a>
-      <a href="surgical.php" type="button" class="btn btn-dark m-3">Surgical</a>
-      <button type="button" class="btn btn-dark m-3">Emergency Room</button>
-      <button type="button" class="btn btn-dark m-3">Operating Room</button>
-      <button type="button" class="btn btn-dark m-3">Intensitive Care Unit</button>
-      <button type="button" class="btn btn-dark m-3">Obstretic Gynecology</button>
-      <button type="button" class="btn btn-dark m-3">Pediatric</button>
+      <a href="surgical.php" type="button" class="btn btn-info m-3">Surgical</a>
+      <a href="emergency.php" type="button" class="btn btn-dark m-3">Emergency Room</a>
+      <a href="operatine.php" type="button" class="btn btn-dark m-3">Operating Room</a>
+      <a href="Intensitive.php" type="button" class="btn btn-dark m-3">Intensitive Care Unit</a>
+      <a href="obstretic.php" type="button" class="btn btn-dark m-3">Obstretic Gynecology</a>
+      <a href="pediatric.php" type="button" class="btn btn-dark m-3">Pediatric</a>
+
+      
     </div>
 
     <!-- search bar -->

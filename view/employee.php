@@ -49,23 +49,18 @@
     <div class="container">
     <br>
     <div class="row">
+      
+      <a href="employee.php" type="button" class="btn btn-info m-3">Employee</a>
       <a href="medicine.php" type="button" class="btn btn-dark m-3">Medicine</a>
       <a href="surgical.php" type="button" class="btn btn-dark m-3">Surgical</a>
-      <button type="button" class="btn btn-dark m-3">Emergency Room</button>
-      <button type="button" class="btn btn-dark m-3">Operating Room</button>
-      <button type="button" class="btn btn-dark m-3">Intensitive Care Unit</button>
-      <button type="button" class="btn btn-dark m-3">Obstretic Gynecology</button>
-      <button type="button" class="btn btn-dark m-3">Pediatric</button>
-    </div>
+      <a href="emergency.php" type="button" class="btn btn-dark m-3">Emergency Room</a>
+      <a href="operatine.php" type="button" class="btn btn-dark m-3">Operating Room</a>
+      <a href="Intensitive.php" type="button" class="btn btn-dark m-3">Intensitive Care Unit</a>
+      <a href="obstretic.php" type="button" class="btn btn-dark m-3">Obstretic Gynecology</a>
+      <a href="pediatric.php" type="button" class="btn btn-dark m-3">Pediatric</a>
 
-    <!-- search bar -->
-      <!-- <div class="d-flex justify-content-center">
-        <div class="searchbar" id="searctID">
-          <input class="search_input" type="text" name="" placeholder="Search...">
-          <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
-        </div>
-      </div> -->
-    <!-- end search -->
+      
+    </div>
 
     <div class="row justify-content-center" id="con-card">
       <div class="col-auto table-responsive">
